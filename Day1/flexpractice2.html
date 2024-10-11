@@ -3,35 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pricing Plans</title>
     <style>
-        *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        .parent{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
         }
-        .Box{
-        display: flex;
-        justify-items: center;
-        justify-content: center;
-        border: 2px solid white;
-        height: 300px;
-        width: 200px;
-        background-color: beige;
+
+        .pricing-table {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .plan {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .plan ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .plan ul li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .plan button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .plan button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="parent">
-        <div class="Box" id="Box-1"><h1>Basic</h1><br><br>$10/month<br><br>Feature 1<br><br>Feature 2<br><br><button</div>
-        <div class="Box" id="Box-2"><h1>Premium</h1><br><br>$30/month<br><br>Feature 1<br><br>Feature 2<br><br>Feature 3<br><br></div>
-        <div class="Box" id="Box-3"><h1>Pro</h1><br><br>$50/month<br><br>Feature 1<br><br>Feature 2<br><br>Feature 3<br><br>Feature 4</div>
+
+    <div class="pricing-table">
+        <!-- Basic Plan -->
+        <div class="plan">
+            <h2>Basic</h2>
+            <p>$10 / month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+            </ul>
+            <button>Sign Up</button>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="plan">
+            <h2>Premium</h2>
+            <p>$30 / month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <button>Sign Up</button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="plan">
+            <h2>Pro</h2>
+            <p>$50 / month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+            <button>Sign Up</button>
+        </div>
     </div>
+
 </body>
 </html>

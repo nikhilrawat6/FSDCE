@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #222;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #f39c12;
+        }
+
+        /* Products Section */
+        .products {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+
+        .product-card {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            color: #ff5733;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .product-card a {
+            color: #00aaff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .product-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">PRODUCTS</a>
+        <a href="#">DISCOUNTS</a>
+        <a href="#">OUR PARTNERS</a>
+        <a href="#">ABOUT US</a>
+    </div>
+
+    <!-- Product Cards Section -->
+    <div class="products">
+        <!-- Matte Product Card -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="Matte Product">
+            <h3>MATTE</h3>
+            <p>a subtle but elegant finish for low-touch and delicate surfaces</p>
+            <a href="#">Explore</a>
+        </div>
+
+        <!-- Semi-Gloss Product Card -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="Semi-Gloss Product">
+            <h3>SEMI-GLOSS</h3>
+            <p>our signature finish for high-wear parts, details and surfaces</p>
+            <a href="#">Explore</a>
+        </div>
+
+        <!-- High-Gloss Product Card -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/100" alt="High-Gloss Product">
+            <h3>HIGH-GLOSS</h3>
+            <p>an eye-stopping shine best for metal and other smooth surfaces</p>
+            <a href="#">Explore</a>
+        </div>
+    </div>
+
+</body>
+</html>
