@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .alert {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="loginContainer" class="container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="loginAlert" class="alert" style="display: none;">Invalid username or password</p>
+</div>
+
+<div id="converterContainer" class="container" style="display: none;">
+    <h2>Currency Converter</h2>
+    <input type="number" id="amount" placeholder="Amount" min="0">
+    <select id="fromCurrency">
+        <option value="USD">USD - American Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="TRY">TRY - Turkish Lira</option>
+    </select>
+    <select id="toCurrency">
+        <option value="USD">USD - American Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="TRY">TRY - Turkish Lira</option>
+    </select>
+    <button onclick="convertCurrency()">Convert</button>
+    <p id="conversionResult" style="text-align: center; font-weight: bold;"></p>
+</div>
+
+<script>
+    // Simple login function
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Dummy credentials (for testing purposes)
+        const validUsername = "user";
+        const validPassword = "password";
+
+        if (username === validUsername && password === validPassword) {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('converterContainer').style.display = 'block';
+        } else {
+            document.getElementById('loginAlert').style.display = 'block';
+        }
+    }
+
+    // Currency conversion function
+    function convertCurrency() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        const fromCurrency = document.getElementById('fromCurrency').value;
+        const toCurrency = document.getElementById('toCurrency').value;
+
+        if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount");
+            return;
+        }
+
+        // Placeholder exchange rates (for demonstration purposes)
+        const exchangeRates = {
+            "USD": { "USD": 1, "EUR": 0.85, "TRY": 9 },
+            "EUR": { "USD": 1.18, "EUR": 1, "TRY": 10.6 },
+            "TRY": { "USD": 0.11, "EUR": 0.095, "TRY": 1 }
+        };
+
+        const conversionRate = exchangeRates[fromCurrency][toCurrency];
+        const convertedAmount = (amount * conversionRate).toFixed(2);
+
+        document.getElementById('conversionResult').innerText = ${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency};
+    }
+</script>
+
+</body>
+</html>
